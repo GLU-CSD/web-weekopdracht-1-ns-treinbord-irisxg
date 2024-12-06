@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weekopdracht - NS-Treinbord</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script defer src="./assets/js/code.js"></script>
+  </head>
+  <body>
     <div id="container">
-        <div id="left">
-            <!-- hier komt de klok -->
+      <div id="left">
+        <div id="klok-container">
+          <div id="klok">
+            <div class="wijzer uur"></div>
+            <div class="wijzer minuut"></div>
+            <div class="wijzer seconden"></div>
+          </div>
         </div>
-        <div id="middle">
-            <!-- Hier komt de reizigers info -->
+      </div>
+
+      <div id="middle">
+        <div id="witRechthoek">
+          <div class="inner-content">
+            <div class="top-header">
+              <!-- Eerste kolom -->
+              <div class="kolom-1">
+                <div class="tijd"></div> <!-- Dynamisch gevuld met geplande tijd -->
+              </div>
+              <!-- Tweede kolom -->
+              <div class="kolom-2">
+                <div class="trein-type"></div> <!-- Dynamisch gevuld met type trein -->
+                <img src="assets/img/ns_logo.png" class="ns" alt="NS Logo" />
+              </div>
+            </div>
+
+            <div class="bestemming"></div> <!-- Dynamisch gevuld met bestemming -->
+            <div class="station-route"></div> <!-- Dynamisch gevuld met stationsroute -->
+          </div>
+          <div class="blauwRechthoek">
+            <div class="hierna"></div> <!-- Dynamisch gevuld met hierna-informatie -->
+          </div>
         </div>
-        <div id="right">
-            <!-- hier komt het spoor nummer -->
+      </div>
+
+      <div id="right">
+        <div class="witVierkantRechts">
+          <div class="blauwVierkantRechts"></div>
+          <div class="spoor-nummer"></div> <!-- Dynamisch gevuld met spoornummer -->
+          <div class="spoor">spoor</div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

@@ -1,30 +1,245 @@
+
+
 #container{
     width: 936px;
     display: flex;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid #000;
+    margin-left: 124px;
+    margin-top: 146px;
 }
 
-#left{
+
+#left {
     width: 240px;
     background-color: #f2f2f2;
     height: 335px;
     border: 2px solid #000;
+    display: flex;
+    justify-content: center; /* Horizontaal centreren */
+    align-items: flex-start; /* Verticaal centreren */
 }
 
-#middle {
+/* Container voor de klok */
+#klok-container {
+    width: 170px; /* Max grootte van de klok */
+    height: 170px;
+    position: relative;
+    top: 28px;
+    left: -4px;
+}
+
+  
+  /* De klokcirkel */
+  #klok {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: url(../img/ns_klok.png) no-repeat center center;
+    background-size: cover;
+    position: relative;
+    border: 5px solid black;
+  }
+  
+  /* Wijzers */
+  .wijzer {
+    position: absolute;
+    width: 50%;
+    height: 4px; /* Dikte van de wijzers */
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 50%; /* Rotatiepunt is het begin van de wijzer */
+    transform: rotate(0deg);
+    transition: transform 0.1s ease-in-out;
+  }
+  
+
+.uur {
+    width: 35%;
+    height: 6px;
+    background-color: rgb(0, 0, 60);
+    transform-origin: 0% 50%;
+    transform: rotate(-90deg); /* Uurwijzer op 12 uur */
+  }
+  
+  /* Minutenwijzer startpositie */
+  .minuut {
+    width: 45%;
+    height: 4px;
+    background-color: rgb(0, 0, 60);
+    transform-origin: 0% 50%;
+    transform: rotate(-90deg); /* Minutenwijzer op 12 uur */
+  }
+  
+  /* Secondenwijzer startpositie */
+  .seconden {
+    width: 50%;
+    height: 2px;
+    background-color: red;
+    transform-origin: 0% 50%;
+    transform: rotate(-90deg); /* Secondenwijzer op 12 uur */
+  }
+
+
+  #middle{
     width: 568px;
     height: 339px;
-    background-color: rgb(0, 0, 106);
+    background-color: rgb(11, 70, 188);
     padding: 35px;
     box-sizing: border-box;
     border: 2px solid #000;
+    position: relative;
 }
 
+#witRechthoek {
+  width: 480px;
+  height: 270px;
+  background-color: white;
+  position: absolute;
+  top: 50%; /* Verplaats naar het midden */
+  left: 50%; /* Verplaats naar het midden */
+  transform: translate(-50%, -50%); /* Compenseer de helft van breedte/hoogte */
+  border: 2px solid black;
+  position: relative;
+}
+.inner-content{
+  padding: 15px;
+  left: 0;
+}
+.tijd, .min, .intercity, .heerlen, .via, .regelOnder, .hierna {
+  position: relative; /* Zorg dat ze niet uit het element springen */
+  color: rgb(0, 0, 106);
+  font-weight: bold;
+}
+
+
+/* Stijlen voor de container */
+.top-header {
+  display: flex; /* Flexbox inschakelen */
+  justify-content: space-between; /* Verdeel de twee kolommen */
+  align-items: center; /* Verticaal centreren */
+}
+
+/* Eerste kolom */
+.kolom-1 {
+  display: flex; /* Voor eventuele inhoud in de kolom */
+  justify-content: flex-start; /* Links uitgelijnd */
+  align-items: center; /* Verticaal centreren */
+}
+
+
+/* Tijd */
+.tijd {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 0, 106);
+}
+
+/* Tweede kolom */
+.kolom-2 {
+  display: flex; /* Flexbox voor de items */
+  justify-content: flex-end; /* Hele kolom rechts uitlijnen */
+  align-items: center; /* Verticaal centreren */
+  gap: 5px; /* Kleine ruimte tussen Intercity en NS-logo */
+}
+
+/* Intercity */
+.trein-type {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(0, 0, 106);
+  margin: 0; /* Geen extra marges */
+}
+
+/* NS-logo */
+.ns {
+  height: 25px; /* Pas aan naar wens */
+  width: auto; /* Behoud de verhouding */
+}
+
+.min{
+  color: rgb(0, 0, 106);
+  font-size: 25px;
+  font-weight: bold; 
+}
+
+.bestemming{
+  color: rgb(0, 0, 106);
+  font-size: 39px;
+  font-weight: bold; 
+  margin-top: 10px;
+}
+
+.station-route{
+  color: rgb(0, 0, 106);
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 10px;  
+}
+
+.regelOnder{
+  color: rgb(0, 0, 106);
+  font-size: 25px;
+  font-weight: bold; 
+}
+
+.blauwRechthoek{
+  background-color: rgb(0, 0, 110);
+  width: 470px;
+  height: 30px;
+  position: absolute;
+  bottom: 0px;
+  padding-left: 10px;
+}
+
+.hierna{
+  color: white;
+  font-size: 16px;
+  font-weight: 400; 
+  line-height: 32px; 
+}
 #right{
     width:128px;
     height: 335px;
-    background-color: rgb(0, 0, 106);
+    background-color: rgb(11, 70, 188);
     border: 2px solid #000;
 }
+
+.witVierkantRechts{
+    position: relative;
+    width: 94px;
+    height: 94px;
+    background-color: white;
+    margin-top: 36px;
+    margin-left: 15px;
+}
+
+.blauwVierkantRechts{
+    position:absolute;
+    left: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(11, 70, 188);
+}
+
+.spoor-nummer{
+    position: absolute;
+    left: 10px;
+    top: 22px;
+    color: rgb(11, 70, 188);
+    font-size: 67px;
+    font-weight: bold;
+    letter-spacing: -7px;
+}
+.spoor{
+    position: absolute;
+    left: 21px;
+    top: 4px;
+    color: rgb(11, 70, 188);
+    font-size: 12px;
+    font-weight: bold;     
+}
+
